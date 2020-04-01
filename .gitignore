@@ -3,3 +3,4 @@
 Pipfile.lock
 *.in
 *.out
+/practice_session/problem1/interactive_runner.py

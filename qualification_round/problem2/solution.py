@@ -4,7 +4,6 @@ def main():
     for i in range(1, t + 1):
         nu = int(input())
         va = list(map(int, input().split()))
-        original = va
 
         end = False
 
@@ -17,16 +16,18 @@ def main():
                     va[idx + 2] = aux
                     end = False
 
-        if sorted(original) == va:
+        end = False
+        idx = 0
+        while not end and idx < nu - 1:
+            if va[idx] > va[idx+1]:
+                end = True
+            else:
+                idx += 1
+
+        if not end:
             result = 'OK'
         else:
-            result = 0
-            end = False
-            while result < len(va) and not end:
-                if va[result] > va[result+1]:
-                    end = True
-                else:
-                    result += 1
+            result = str(idx)
 
         print('Case #{0}: {1}'.format(i, result))
 
